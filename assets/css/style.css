@@ -15,58 +15,64 @@
 
   --bg-gradient-onyx: linear-gradient(
     to bottom right,
-    hsl(240, 1%, 25%) 3%,
-    hsl(0, 0%, 19%) 97%
+    hsl(222, 24%, 18%) 3%,
+    hsl(222, 30%, 10%) 97%
   );
   --bg-gradient-jet: linear-gradient(
       to bottom right,
-      hsla(240, 1%, 18%, 0.251) 0%,
-      hsla(240, 2%, 11%, 0) 100%
+      hsla(222, 24%, 22%, 0.251) 0%,
+      hsla(222, 30%, 10%, 0) 100%
     ),
-    hsl(240, 2%, 13%);
+    hsl(222, 30%, 12%);
   --bg-gradient-yellow-1: linear-gradient(
     to bottom right,
-    hsl(45, 100%, 71%) 0%,
-    hsla(36, 100%, 69%, 0) 50%
+    hsl(187, 84%, 53%) 0%,
+    hsla(239, 84%, 67%, 0) 50%
   );
   --bg-gradient-yellow-2: linear-gradient(
       135deg,
-      hsla(45, 100%, 71%, 0.251) 0%,
-      hsla(35, 100%, 68%, 0) 59.86%
+      hsla(187, 84%, 53%, 0.251) 0%,
+      hsla(239, 84%, 67%, 0) 59.86%
     ),
-    hsl(240, 2%, 13%);
+    hsl(222, 30%, 12%);
   --border-gradient-onyx: linear-gradient(
     to bottom right,
-    hsl(0, 0%, 25%) 0%,
-    hsla(0, 0%, 25%, 0) 50%
+    hsl(222, 20%, 30%) 0%,
+    hsla(222, 20%, 30%, 0) 50%
   );
   --text-gradient-yellow: linear-gradient(
     to right,
-    hsl(45, 100%, 72%),
-    hsl(35, 100%, 68%)
+    hsl(187, 90%, 55%),
+    hsl(239, 84%, 67%)
   );
 
   /* solid */
 
-  --jet: hsl(0, 0%, 22%);
-  --onyx: hsl(240, 1%, 17%);
-  --eerie-black-1: hsl(240, 2%, 13%);
-  --eerie-black-2: hsl(240, 2%, 12%);
-  --smoky-black: hsl(0, 0%, 7%);
-  --white-1: hsl(0, 0%, 100%);
-  --white-2: hsl(0, 0%, 98%);
-  --orange-yellow-crayola: hsl(45, 100%, 72%);
-  --vegas-gold: hsl(45, 54%, 58%);
-  --light-gray: hsl(0, 0%, 84%);
-  --light-gray-70: hsla(0, 0%, 84%, 0.7);
-  --bittersweet-shimmer: hsl(0, 43%, 51%);
+  --jet: hsl(222, 18%, 24%);
+  --onyx: hsl(222, 24%, 16%);
+  --eerie-black-1: hsl(222, 33%, 10%);
+  --eerie-black-2: hsl(222, 30%, 11%);
+  --smoky-black: hsl(222, 41%, 6%);
+  --white-1: hsl(210, 20%, 98%);
+  --white-2: hsl(210, 17%, 95%);
+  --orange-yellow-crayola: hsl(187, 84%, 53%);
+  --vegas-gold: hsl(239, 84%, 67%);
+  --light-gray: hsl(220, 14%, 80%);
+  --light-gray-70: hsla(220, 14%, 80%, 0.7);
+  --bittersweet-shimmer: hsl(0, 60%, 58%);
+
+  /* accent helpers */
+  --accent-cyan: hsl(187, 84%, 53%);
+  --accent-indigo: hsl(239, 84%, 67%);
+  --accent-glow: hsla(187, 84%, 53%, 0.25);
 
   /**
    * typography
    */
 
   /* font-family */
-  --ff-poppins: "Poppins", sans-serif;
+  --ff-poppins: "Inter", "Poppins", sans-serif;
+  --ff-heading: "Space Grotesk", "Inter", sans-serif;
 
   /* font-size */
   --fs-1: 24px;
@@ -477,7 +483,7 @@ main {
   bottom: 0;
   left: 0;
   width: 100%;
-  background: hsla(240, 1%, 17%, 0.75);
+  background: hsla(222, 30%, 11%, 0.8);
   backdrop-filter: blur(10px);
   border: 1px solid var(--jet);
   border-radius: 12px 12px 0 0;
@@ -987,7 +993,7 @@ main {
 }
 
 .select-item button:hover {
-  --eerie-black-2: hsl(240, 2%, 20%);
+  --eerie-black-2: hsl(222, 24%, 18%);
 }
 
 .project-list {
@@ -2046,4 +2052,212 @@ textarea.form-input::-webkit-resizer {
 
 .test-title {
   margin: 10px 0px;
+}
+
+/*-----------------------------------*\
+  #AI THEME REFINEMENTS (cyan -> indigo)
+\*-----------------------------------*/
+
+/* ambient background glow */
+body {
+  background-color: var(--smoky-black);
+  background-image: radial-gradient(
+      ellipse 80% 60% at 15% 0%,
+      hsla(187, 84%, 53%, 0.1) 0%,
+      transparent 55%
+    ),
+    radial-gradient(
+      ellipse 70% 60% at 100% 10%,
+      hsla(239, 84%, 67%, 0.12) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      ellipse 90% 50% at 50% 100%,
+      hsla(239, 84%, 67%, 0.08) 0%,
+      transparent 60%
+    );
+  background-attachment: fixed;
+}
+
+/* modern display type for headings */
+.h2,
+.h3,
+.h4,
+.h5,
+.info-content .name,
+.article-title,
+.service-item-title,
+.project-title,
+.skills-title,
+.timeline-item-title,
+.blog-item-title,
+.form-title {
+  font-family: var(--ff-heading);
+  letter-spacing: -0.3px;
+}
+
+.info-content .name {
+  font-weight: var(--fw-600);
+}
+
+/* tagline as a subtle accent chip */
+.info-content .title {
+  color: var(--white-2);
+  background: linear-gradient(
+    135deg,
+    hsla(187, 84%, 53%, 0.18),
+    hsla(239, 84%, 67%, 0.18)
+  );
+  border: 1px solid hsla(187, 84%, 53%, 0.35);
+  font-weight: var(--fw-400);
+  letter-spacing: 0.2px;
+}
+
+/* glowing avatar frame */
+.avatar-box {
+  border: 1px solid hsla(187, 84%, 53%, 0.4);
+  box-shadow: 0 0 0 1px hsla(239, 84%, 67%, 0.15),
+    0 8px 24px hsla(187, 84%, 53%, 0.18);
+}
+
+/* longer, glowing accent underline on section titles */
+.article-title::after {
+  width: 44px;
+  box-shadow: 0 0 12px var(--accent-glow);
+}
+
+/* accent glow on icon boxes */
+.icon-box {
+  box-shadow: var(--shadow-1), 0 0 12px hsla(187, 84%, 53%, 0.12);
+}
+
+/* active nav link subtle glow */
+.navbar-link.active {
+  text-shadow: 0 0 14px var(--accent-glow);
+}
+
+/* project card lift + accent ring on hover */
+.project-img {
+  border: 1px solid transparent;
+  transition: var(--transition-1);
+}
+
+.project-item > a:hover .project-img {
+  border-color: hsla(187, 84%, 53%, 0.5);
+  box-shadow: 0 10px 30px hsla(187, 84%, 53%, 0.18);
+}
+
+.project-title {
+  transition: color var(--transition-1);
+}
+
+.project-item > a:hover ~ .project-title,
+.project-item:hover .project-title {
+  color: var(--accent-cyan);
+}
+
+/* project action buttons */
+.project-button {
+  border: 1px solid hsla(187, 84%, 53%, 0.3);
+  border-radius: 6px;
+  transition: var(--transition-1);
+}
+
+.project-button:hover {
+  background: hsla(187, 84%, 53%, 0.12);
+  border-color: hsla(187, 84%, 53%, 0.6);
+}
+
+/* skills value text in cool accent */
+.skill .title-wrapper data {
+  color: var(--light-gray);
+}
+
+.skills-list .h5 {
+  color: var(--accent-cyan);
+}
+
+/* crisper text rendering */
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* gradient name */
+.info-content .name {
+  background: var(--text-gradient-yellow);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* smooth fade/slide when switching tabs */
+article.active {
+  animation: fadeUp 0.5s ease both;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* service cards: lift + accent edge on hover */
+.service-item {
+  transition: transform var(--transition-1), box-shadow var(--transition-1);
+}
+
+.service-item:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-2), 0 12px 28px hsla(187, 84%, 53%, 0.12);
+}
+
+.service-item::before {
+  transition: background var(--transition-1);
+}
+
+.service-item:hover::before {
+  background: linear-gradient(
+      to bottom right,
+      hsla(187, 84%, 53%, 0.08),
+      hsla(239, 84%, 67%, 0.03)
+    ),
+    var(--eerie-black-1);
+}
+
+/* accent gradient scrollbar */
+.has-scrollbar::-webkit-scrollbar-thumb {
+  background: var(--text-gradient-yellow);
+}
+
+/* glowing timeline node */
+.timeline-item::after {
+  box-shadow: 0 0 0 4px var(--eerie-black-1), 0 0 10px var(--accent-glow);
+}
+
+/* form focus glow */
+.form-input:focus {
+  box-shadow: 0 0 0 3px hsla(187, 84%, 53%, 0.15);
+}
+
+/* respect reduced-motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  article.active {
+    animation: none;
+  }
+  .service-item:hover {
+    transform: none;
+  }
 }
